@@ -23,7 +23,7 @@ vspd = lengthdir_y(len, dir);
 
 #region Collision
 //horizontal collision
-if place_meeting(x+hspd, y, obj_wall){
+if place_meeting(x+hspd, y, obj_wall) or place_meeting(x+hspd, y, obj_wallinv){
 	while !place_meeting(x+hspd, y, obj_wall){
 		x+=sign(hspd);
 	}
@@ -32,7 +32,7 @@ if place_meeting(x+hspd, y, obj_wall){
 x+=hspd;
 
 //vertical collision
-if place_meeting(x, y+vspd, obj_wall){
+if place_meeting(x, y+vspd, obj_wall) or place_meeting(x, y+vspd, obj_wallinv){
 	while !place_meeting(x, y+vspd, obj_wall){
 		y+=sign(vspd);
 	}
@@ -41,7 +41,7 @@ if place_meeting(x, y+vspd, obj_wall){
 y+=vspd;
 
 //horizontal collision
-if place_meeting(x+hspd, y, obj_wallinv){
+/*if place_meeting(x+hspd, y, obj_wallinv){
 	while !place_meeting(x+hspd, y, obj_wallinv){
 		x+=sign(hspd);
 	}
@@ -56,7 +56,7 @@ if place_meeting(x, y+vspd, obj_wallinv){
 	}
 	vspd = 0;
 }
-y+=vspd;
+y+=vspd;*/
 #endregion
 
 #endregion
